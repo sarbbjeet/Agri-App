@@ -9,6 +9,8 @@ import {useSelector} from 'react-redux';
 import CustomDrawer from '../components/CustomDrawer';
 import NodeScanning from '../screens/NodeScanning';
 import Settings from '../screens/Settings';
+import {navBarHeader} from '../theme/fonts';
+import {colors} from '../theme/colors';
 // import { moderateScale } from "../components/Scaling";
 // import RedeemModal from "../components/RedeemModal";
 // import SwitchBook from "../screens/SwitchBook";
@@ -37,12 +39,12 @@ export default function AppDrawerNavigator() {
     <DrawerView.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
-        headerTintColor: 'white',
+        headerTintColor: navBarHeader.fontColor,
         headerStyle: {
-          backgroundColor: 'red',
+          backgroundColor: colors.primary,
         },
         headerTitleStyle: {
-          fontSize: 18,
+          fontSize: navBarHeader.fontSize,
         },
       }}>
       {/* <DrawerView.Screen
@@ -60,16 +62,16 @@ export default function AppDrawerNavigator() {
       <DrawerView.Screen
         name="dHome"
         component={Home}
-        options={{title: 'Home', headerShown: false}}
+        options={{title: 'Home', headerShown: true}}
       />
       <DrawerView.Screen
         name="dScanning"
         component={NodeScanning}
         options={{
           title: 'Scanning',
-          headerStyle: {
-            backgroundColor: '#D90080',
-          },
+          // headerStyle: {
+          //   backgroundColor: '#D90080',
+          // },
         }}
       />
 
@@ -78,9 +80,9 @@ export default function AppDrawerNavigator() {
         component={Settings}
         options={{
           title: 'Settings',
-          headerStyle: {
-            backgroundColor: '#D90080',
-          },
+          // headerStyle: {
+          //   backgroundColor: '#D90080',
+          // },
         }}
       />
     </DrawerView.Navigator>

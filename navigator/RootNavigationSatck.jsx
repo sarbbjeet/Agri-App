@@ -7,72 +7,39 @@ import Login from '../screens/Login';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AppDrawerNavigator from './AppDrawerNavigator';
 import NodeScanning from '../screens/NodeScanning';
-// import VoucherInfo from "../screens/VoucherInfo";
-// import { moderateScale } from "../components/Scaling";
-// import VoucherRedeem from "../screens/VoucherRedeem";
-// import Rules from "../screens/Rules";
-// import { connectToServer } from "../store/actions/util";
-
+import {colors} from '../theme/colors';
+import {navBarHeader} from '../theme/fonts';
 const Stack = createNativeStackNavigator();
 export default function RootNavigationSatck() {
-  // const dispatch = useDispatch();
-  // const users = useSelector((state) => state.users);
-  //vailidate token
-  // useEffect(() => dispatch(connectToServer(users.token, users.loginUid)), []);
-
-  //console.log("users..", users);
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: colors.primary,
+            },
+            headerTitleStyle: {
+              fontSize: navBarHeader.fontSize,
+              fontWeight: navBarHeader.fontWeight,
+            },
+            headerTintColor: navBarHeader.fontColor,
+          }}>
           {/* {users.token ? (
                         //screens for login user */}
           <Stack.Group>
-            {/* <Stack.Screen
+            <Stack.Screen
               name="drawer"
               component={AppDrawerNavigator}
               options={{headerShown: false}}
-            /> */}
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              // options={{headerShown: false}}
             />
-            <Stack.Screen
+            <Stack.Screen name="Home" component={Home} />
+
+            {/* <Stack.Screen
               name="nodeScanning"
               component={NodeScanning}
               // options={{headerShown: false}}
-            />
-            {/* <Stack.Screen
-                            name="voucherInfo"
-                            component={VoucherInfo}
-                            options={({ route }) => ({
-                              title: route.params.title,
-                              headerStyle: {
-                                backgroundColor: route.params.backgroundColor,
-                              },
-                              headerTintColor: "white",
-                              headerTitleStyle: {
-                                fontSize: moderateScale(16),
-                                fontWeight: "bold",
-                              },
-                            })}
-                          />
-                          <Stack.Screen
-                            name="voucherRedeem"
-                            component={VoucherRedeem}
-                            options={({ route }) => ({
-                              title: route.params.title,
-                              headerStyle: {
-                                backgroundColor: route.params.backgroundColor,
-                              },
-                              headerTintColor: "white",
-                              headerTitleStyle: {
-                                fontSize: moderateScale(16),
-                                fontWeight: "bold",
-                              },
-                            })}
-                          /> */}
+            /> */}
           </Stack.Group>
           {/* ) : (
                         //Auth screens

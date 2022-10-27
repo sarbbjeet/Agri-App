@@ -9,4 +9,4 @@ const colors = {
   background_2: '#EEEEEE',
   background_3: '#DDDDDD',
 };
-export default colors;
+export {colors};

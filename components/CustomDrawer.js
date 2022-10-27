@@ -16,12 +16,12 @@ const menuRoutes = [
   {
     id: 1,
     title: 'Home',
-    route: 'Home',
+    route: 'dHome',
   },
   {
     id: 2,
     title: 'Scanning',
-    route: 'dScannings',
+    route: 'dScanning',
   },
   {
     id: 3,

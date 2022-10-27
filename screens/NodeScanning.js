@@ -4,7 +4,7 @@ import React from 'react';
 export default function NodeScanning() {
   return (
     <View>
-      <Text> NodeScanning </Text>{' '}
+      <Text> NodeScanning </Text>
     </View>
   );
 }
