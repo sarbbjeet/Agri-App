@@ -6,12 +6,20 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 //import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import {DrawerActions} from '@react-navigation/native';
+import {colors} from '../theme/colors';
 // import {moderateScale, verticalScale} from './Scaling';
 // import {logout} from '../store/actions/users';
 
+import {Avatar} from 'react-native-paper';
+
+const farmer = {
+  id: '72809bjkb',
+  name: 'sarbjit singh',
+};
 const menuRoutes = [
   {
     id: 1,
@@ -68,7 +76,7 @@ export default function CustomDrawer(props) {
   //   const [selectedBook, setSelectedBook] = useState({});
   //   const {users} = useSelector(state => state);
   //   const {selectedUserBookId, loginUid} = users;
-  const headerBackgroundColor = '#D90080';
+  const headerBackgroundColor = colors.primary;
 
   //   const handleLogout = loginUid => {
   //     dispatch(logout(loginUid));
@@ -95,16 +103,22 @@ export default function CustomDrawer(props) {
           ...styles.Container,
           backgroundColor: headerBackgroundColor,
         }}>
-        <Text style={styles.mTitle}>Your Membership Number</Text>
-        <Text
-          style={{
-            ...styles.text,
-            fontSize: 25,
-            marginTop: 5,
-            fontWeight: '700',
-          }}>
-          738979
-        </Text>
+        <View style={styles.avatarWraper}>
+          <Avatar.Image
+            size={80}
+            source={require('../assets/img_avatar.png')}
+          />
+          <Text
+            style={{
+              ...styles.text,
+              fontSize: 22,
+              textTransform: 'capitalize',
+              marginLeft: 5,
+              fontWeight: '700',
+            }}>
+            {farmer.name}
+          </Text>
+        </View>
       </View>
       <View style={{flex: 8}}>
         <ScrollView style={{width: '100%', marginTop: 4}}>
@@ -137,7 +151,7 @@ const styles = StyleSheet.create({
   },
   Container: {
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     width: '100%',
     flex: 2,
     backgroundColor: 'red',
@@ -181,5 +195,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
+  },
+  avatarWraper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 });

@@ -12,43 +12,43 @@ import {navBarHeader} from '../theme/fonts';
 const Stack = createNativeStackNavigator();
 export default function RootNavigationSatck() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: colors.primary,
-            },
-            headerTitleStyle: {
-              fontSize: navBarHeader.fontSize,
-              fontWeight: navBarHeader.fontWeight,
-            },
-            headerTintColor: navBarHeader.fontColor,
-          }}>
-          {/* {users.token ? (
+    // <SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTitleStyle: {
+            fontSize: navBarHeader.fontSize,
+            fontWeight: navBarHeader.fontWeight,
+          },
+          headerTintColor: navBarHeader.fontColor,
+        }}>
+        {/* {users.token ? (
                         //screens for login user */}
-          <Stack.Group>
-            <Stack.Screen
-              name="drawer"
-              component={AppDrawerNavigator}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen name="Home" component={Home} />
+        <Stack.Group>
+          <Stack.Screen
+            name="drawer"
+            component={AppDrawerNavigator}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen name="Home" component={Home} />
 
-            {/* <Stack.Screen
+          {/* <Stack.Screen
               name="nodeScanning"
               component={NodeScanning}
               // options={{headerShown: false}}
             /> */}
-          </Stack.Group>
-          {/* ) : (
+        </Stack.Group>
+        {/* ) : (
                         //Auth screens
                         <Stack.Group screenOptions={{ headerShown: false }}>
                           <Stack.Screen name="Login" component={Login} />
                         </Stack.Group>
                       )} */}
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+      </Stack.Navigator>
+    </NavigationContainer>
+    // </SafeAreaProvider>
   );
 }
