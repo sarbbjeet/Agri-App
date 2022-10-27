@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import MQTT from 'sp-react-native-mqtt';
 import {
   SafeAreaView,
@@ -9,32 +9,37 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import User from './components/User';
 import MQTTContext from './context/MQTTContext';
+import RootNavigationSatck from './navigator/RootNavigationSatck';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  // const backgroundStyle = {
+  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  // };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView
+      style={{
+        display: 'flex',
+        height: '100%',
+      }}>
       <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+        backgroundColor={'red'}
+        // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        // backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
+      {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-      <MQTTContext >
-      <User />
-      </MQTTContext>
-      </ScrollView>
+        // style={backgroundStyle}
+      > */}
+      {/* <MQTTContext>
+        <User />
+      </MQTTContext> */}
+      <RootNavigationSatck />
     </SafeAreaView>
   );
 };
