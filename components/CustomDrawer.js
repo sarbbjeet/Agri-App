@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+// import {useSelector, useDispatch} from 'react-redux';
 import {
   StyleSheet,
   View,
@@ -64,8 +64,8 @@ const AppButton = ({title = 'button', onPress}) => {
 };
 
 export default function CustomDrawer(props) {
-  const dispatch = useDispatch();
-  const [selectedBook, setSelectedBook] = useState({});
+  //   const dispatch = useDispatch();
+  //   const [selectedBook, setSelectedBook] = useState({});
   //   const {users} = useSelector(state => state);
   //   const {selectedUserBookId, loginUid} = users;
   const headerBackgroundColor = '#D90080';
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   drawerItem: {
-    paddingVertical: moderateScale(20),
+    paddingVertical: 20,
     paddingLeft: 10,
   },
   drawerItemText: {
@@ -151,15 +151,15 @@ const styles = StyleSheet.create({
   },
 
   listItem: {
-    paddingLeft: moderateScale(20),
-    paddingVertical: moderateScale(8),
+    paddingLeft: 20,
+    paddingVertical: 8,
     marginLeft: 5,
     borderBottomWidth: 0,
   },
   divider: {
     width: '100%',
     height: 1,
-    marginVertical: moderateScale(10),
+    marginVertical: 10,
     backgroundColor: '#eee',
   },
   footer: {
@@ -171,15 +171,15 @@ const styles = StyleSheet.create({
   },
   changeBook: {
     color: '#FDBCE2',
-    fontSize: moderateScale(16),
+    fontSize: 16,
   },
   mTitle: {
     color: '#FDBCE2',
-    fontSize: moderateScale(16),
+    fontSize: 16,
   },
   activeBook: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: moderateScale(20),
+    fontSize: 20,
   },
 });

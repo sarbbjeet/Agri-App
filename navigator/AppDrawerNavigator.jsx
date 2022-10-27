@@ -45,7 +45,7 @@ export default function AppDrawerNavigator() {
           fontSize: 18,
         },
       }}>
-      <DrawerView.Screen
+      {/* <DrawerView.Screen
         name="dVTabs"
         component={VoucherTabs}
         options={{
@@ -56,7 +56,7 @@ export default function AppDrawerNavigator() {
           //   </View>
           // ),
         }}
-      />
+      /> */}
       <DrawerView.Screen
         name="dHome"
         component={Home}

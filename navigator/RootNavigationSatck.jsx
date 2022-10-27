@@ -6,6 +6,7 @@ import Home from '../screens/Home';
 import Login from '../screens/Login';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AppDrawerNavigator from './AppDrawerNavigator';
+import NodeScanning from '../screens/NodeScanning';
 // import VoucherInfo from "../screens/VoucherInfo";
 // import { moderateScale } from "../components/Scaling";
 // import VoucherRedeem from "../screens/VoucherRedeem";
@@ -27,15 +28,20 @@ export default function RootNavigationSatck() {
           {/* {users.token ? (
                         //screens for login user */}
           <Stack.Group>
-            <Stack.Screen
-              name="Home"
-              component={Home}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
+            {/* <Stack.Screen
               name="drawer"
               component={AppDrawerNavigator}
               options={{headerShown: false}}
+            /> */}
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              // options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="nodeScanning"
+              component={NodeScanning}
+              // options={{headerShown: false}}
             />
             {/* <Stack.Screen
                             name="voucherInfo"
