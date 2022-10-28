@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Constants from "expo-constants";
 import { Avatar } from "react-native-elements";
+import { AntDesign } from "@expo/vector-icons";
 import {
   StyleSheet,
   View,
@@ -21,20 +22,23 @@ const menuRoutes = [
     id: 1,
     title: "Home",
     route: "dHome",
+    icon: "home",
   },
   {
     id: 2,
     title: "Configure Gateway",
     route: "dSettings",
+    icon: "setting",
   },
   {
     id: 3,
     title: "About",
     route: "dAbout",
+    icon: "contacts",
   },
 ];
 
-const Item = ({ title, route, navigation }) => {
+const Item = ({ title, route, navigation, icon }) => {
   const [event, setEvent] = useState(false);
   return (
     <TouchableOpacity
@@ -47,12 +51,18 @@ const Item = ({ title, route, navigation }) => {
         navigation.navigate(route);
       }}
     >
+      <AntDesign
+        name={icon}
+        size={moderateScale(22)}
+        color="black"
+        style={{ paddingHorizontal: 5 }}
+      />
       <Text style={styles.drawerItemText}> {title} </Text>
     </TouchableOpacity>
   );
 };
 
-const AppButton = ({ title = "button", onPress }) => {
+const AppButton = ({ title = "button", onPress, icon }) => {
   return (
     <TouchableOpacity
       style={{
@@ -60,6 +70,12 @@ const AppButton = ({ title = "button", onPress }) => {
       }}
       onPress={onPress}
     >
+      <AntDesign
+        name={icon}
+        size={moderateScale(22)}
+        color="black"
+        style={{ paddingHorizontal: 5 }}
+      />
       <Text style={styles.drawerItemText}> {title} </Text>
     </TouchableOpacity>
   );
@@ -97,13 +113,13 @@ export default function CustomDrawer(props) {
       </View>
       <View style={{ flex: 7 }}>
         <ScrollView style={{ width: "100%", marginTop: 4 }}>
-          {menuRoutes.map(({ id, title, route }) => (
+          {menuRoutes.map(({ id, title, route, icon }) => (
             <View key={id}>
-              <Item title={title} route={route} {...props} />
+              <Item title={title} route={route} {...props} icon={icon} />
               <View style={styles.divider} />
             </View>
           ))}
-          <AppButton title="Logout" />
+          <AppButton title="Logout" icon="logout" />
         </ScrollView>
       </View>
       <View
@@ -136,15 +152,16 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   drawerItemText: {
-    fontSize: moderateScale(18),
-    fontFamily: "BalooBhai_semibold",
+    fontSize: moderateScale(16),
+    fontFamily: "Poppins_semibold",
   },
 
   listItem: {
-    paddingLeft: moderateScale(20),
+    paddingLeft: moderateScale(16),
     paddingVertical: moderateScale(8),
-    marginLeft: 5,
+    marginLeft: moderateScale(4),
     borderBottomWidth: 0,
+    flexDirection: "row",
   },
   divider: {
     width: "100%",
