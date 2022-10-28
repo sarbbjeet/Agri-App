@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Constants from "expo-constants";
+import { Avatar } from "react-native-elements";
 import {
   StyleSheet,
   View,
@@ -10,6 +12,10 @@ import {
 import { DrawerActions } from "@react-navigation/native";
 import { moderateScale, verticalScale } from "../Scaling";
 import { navheaderFont } from "../constants/theme";
+const farmer = {
+  name: "sarbjit singh ",
+  id: "a9902",
+};
 const menuRoutes = [
   {
     id: 1,
@@ -65,22 +71,31 @@ export default function CustomDrawer(props) {
       <View
         style={{
           ...styles.Container,
+          paddingTop: Constants.statusBarHeight,
           backgroundColor: navheaderFont.backgroundColor,
         }}
       >
-        <Text style={styles.mTitle}> Your Membership Number </Text>
+        <Avatar
+          rounded
+          source={require("../resources/img_avatar.png")}
+          size={moderateScale(85)}
+          onPress={() => console.log("Works!")}
+          activeOpacity={0.4}
+        />
         <Text
+          className=""
           style={{
             ...styles.text,
-            fontSize: 25,
-            marginTop: 5,
-            fontWeight: "700",
+            fontSize: moderateScale(22),
+            fontFamily: "BalooBhai_semibold",
+            textTransform: "capitalize",
+            padding: moderateScale(5),
           }}
         >
-          893948
+          {farmer.name}
         </Text>
       </View>
-      <View style={{ flex: 8 }}>
+      <View style={{ flex: 7 }}>
         <ScrollView style={{ width: "100%", marginTop: 4 }}>
           {menuRoutes.map(({ id, title, route }) => (
             <View key={id}>
@@ -94,11 +109,10 @@ export default function CustomDrawer(props) {
       <View
         style={{
           ...styles.footer,
-          backgroundColor: "green",
+          backgroundColor: navheaderFont.backgroundColor,
         }}
       >
-        <Text style={styles.changeBook}> Active Voucher Book </Text>
-        <Text style={styles.activeBook}> harry potter </Text>
+        <Text style={styles.footerTag}>Agriculture Monitoring System</Text>
       </View>
     </View>
   );
@@ -114,7 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    flex: 2,
+    // flex: 2,
     backgroundColor: navheaderFont.backgroundColor,
   },
   drawerItem: {
@@ -122,7 +136,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   drawerItemText: {
-    fontSize: 18,
+    fontSize: moderateScale(18),
+    fontFamily: "BalooBhai_semibold",
   },
 
   listItem: {
@@ -139,14 +154,15 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: "#D90080",
-    flex: 2,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
   },
-  changeBook: {
-    color: "#FDBCE2",
-    fontSize: moderateScale(16),
+  footerTag: {
+    color: "#FDFFE2",
+    fontFamily: "BalooBhai_regular",
+    fontSize: moderateScale(18),
   },
   mTitle: {
     color: "#FDBCE2",
