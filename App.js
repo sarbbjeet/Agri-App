@@ -7,7 +7,15 @@ import RootNavigationSatck from "./navigator/RootNavigationSatck";
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
 const Stack = createNativeStackNavigator();
+
+import { useFonts } from "expo-font";
+import { fonts } from "./constants/fontFamily";
 export default function App() {
+  const [loaded] = useFonts(fonts); //add fontfamilys
+
+  if (!loaded) {
+    return null;
+  }
   return (
     <>
       {/* <View

@@ -19,6 +19,7 @@ export default function AppDrawerNavigator() {
         },
         headerTitleStyle: {
           fontSize: navheaderFont.fontSize,
+          fontFamily: navheaderFont.fontFamily,
         },
       }}
     >
