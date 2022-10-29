@@ -13,7 +13,7 @@ import { colors } from "../constants/colors";
 export default function Sprinkler({ powerStatus = false, onClick }) {
   //   const [pStatus, setStatus] = useState(powerStatus);
   return (
-    <View className="w-36 shadow">
+    <View className="w-36 shadow pb-2">
       <Text style={styles.title}>Sprinker</Text>
       <TouchableOpacity
         onPress={onClick}
@@ -44,14 +44,14 @@ export default function Sprinkler({ powerStatus = false, onClick }) {
 const styles = StyleSheet.create({
   title: {
     fontFamily: "Poppins_semibold",
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(14),
     color: colors.dark_text,
     textAlign: "center",
     paddingVertical: 5,
   },
   status: {
     fontFamily: "BalooBhai_semibold",
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(16),
     position: "absolute",
     bottom: 0,
     width: "100%",
