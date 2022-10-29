@@ -8,4 +8,7 @@ export const colors = {
   background_1: "#FFFFFF",
   background_2: "#EEEEEE",
   background_3: "#DDDDDD",
+  yellow_600: "#ca8a04",
+  sprinker_on: "#FB2D00",
+  sprinker_off: "#8D5B5B",
 };
