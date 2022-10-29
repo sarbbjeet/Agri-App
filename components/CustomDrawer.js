@@ -181,13 +181,4 @@ const styles = StyleSheet.create({
     fontFamily: "BalooBhai_regular",
     fontSize: moderateScale(18),
   },
-  mTitle: {
-    color: "#FDBCE2",
-    fontSize: moderateScale(16),
-  },
-  activeBook: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: moderateScale(20),
-  },
 });

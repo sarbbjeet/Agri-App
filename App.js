@@ -10,6 +10,7 @@ const Stack = createNativeStackNavigator();
 
 import { useFonts } from "expo-font";
 import { fonts } from "./constants/fontFamily";
+
 export default function App() {
   const [loaded] = useFonts(fonts); //add fontfamilys
 
@@ -25,17 +26,6 @@ export default function App() {
       <RootNavigationSatck />
     </>
   );
-  // <View>
-  {
-    /* <View
-        style={{ height: Constants.statusBarHeight }}
-        className="bg-green-600"
-      /> */
-  }
-  {
-    /* <RootNavigationSatck /> */
-  }
-  // </View>
 }
 
 const styles = StyleSheet.create({
